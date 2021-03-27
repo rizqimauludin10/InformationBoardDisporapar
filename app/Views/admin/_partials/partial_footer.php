@@ -40,6 +40,8 @@
     <script src="<?= base_url(''); ?>/assets/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url(''); ?>/assets/js/demo/datatables-demo.js"></script>
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <script>
     $(function() {
         $("#datepicker").datepicker({

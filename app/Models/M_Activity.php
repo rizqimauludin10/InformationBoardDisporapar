@@ -13,8 +13,8 @@ class M_Activity extends Model{
 
     protected $allowedFields = [
         'user_id',
+        'title_act',
         'name_act', 
-        'name_act',
         'desc_act',
         'date_act',
         'startfrom_act',

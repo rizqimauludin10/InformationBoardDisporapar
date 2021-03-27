@@ -3,25 +3,197 @@ html {
     min-height: 100%;
     margin: 0;
 
-}
-
-.bg {
-    /* The image used */
-    background-image: url("https://images.unsplash.com/photo-1613499094469-d481efd630a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80");
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center center;
+    /* background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #464646;
+    background-image: url("https://i.imgur.com/syD8xgg.jpeg"); */
+
+}
+
+.bg {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.bg::before {
+    content: "";
+    background-image: url('https://i.imgur.com/syD8xgg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    /* opacity: 0.75; */
 }
 
 @media only screen and (max-width: 767px) {
     html {
-        background-image: url("https://images.unsplash.com/photo-1613499094469-d481efd630a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80");
+        background-image: url('https://i.imgur.com/syD8xgg.jpeg');
     }
+}
+
+.bg_header {
+    /* background-color: bisque; */
+}
+
+#clock {
+    text-align: center;
+    font-size: 26pt;
+    font-weight: 600;
+}
+
+#date {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 100;
+}
+
+.c_date {
+    background-color: #1313138f;
+}
+
+.title h3 {
+    font-weight: 700;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    float: right;
+}
+
+.element-to-stick-to-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #2462e7;
+}
+
+
+#contain {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+#table_scroll {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#table_scroll tbody td {
+    padding: 10px;
+    /* opacity: 0.75; */
+    background-color: #2a2b29;
+}
+
+
+#tgl {
+    width: 20%;
+    font-weight: 600;
+    font-size: 18pt;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(192, 255, 17);
+}
+
+#isitabel {
+    font-weight: 400;
+    font-size: 12pt;
+    text-align: left;
+    color: rgb(231, 255, 11);
+}
+
+#table_fixed thead th {
+    padding: 10px;
+    background-color: #8a2005;
+    color: #fff;
+    font-weight: 400;
+}
+
+#table_fixed {
+    width: 100%;
+}
+
+
+.fadein {
+
+    top: 0px;
+    margin: auto;
+}
+
+.fadein img {
+    position: absolute;
+    left: -65px;
+    top: 0;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#f1 {
+    background-color: lightblue;
+}
+
+#f2 {
+    -webkit-animation-delay: -4s;
+    background-color: yellow;
+}
+
+#f3 {
+    -webkit-animation-delay: -2s;
+    background-color: lightgreen;
 }
