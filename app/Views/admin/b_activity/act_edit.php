@@ -52,12 +52,11 @@
             <label for="idKategori" class="col-sm-3 col-form-label">Dihadiri Oleh</label>
             <div class="col-sm-9">
                 <select select class="form-control" name="idKategori" id="idKategori">
-                    <option value=""> --Daftar Pejabat-- </option>
-                    <option value="Kepala Dinas"> Kepala Dinas </option>
-                    <option value="Kabid Kepemudaan">Kabid Kepemudaan</option>
-                    <option value="Kabid Olahraga">Kabid Olahraga</option>
-                    <option value="Kabid Pariwisata">Kabid Pariwisata</option>
-                    <option value="Kabid Ekonomi Kreatif">Kabid Ekonomi Kreatif</option>
+                    <option value="Kepala Dinas" <?php if($name_act == 'Kepala Dinas') echo "selected"; ?> > Kepala Dinas </option>
+                    <option value="Kabid Kepemudaan" <?php if($name_act == 'Kabid Kepemudaan') echo "selected"; ?> >Kabid Kepemudaan</option>
+                    <option value="Kabid Olahraga" <?php if($name_act == 'Kabid Olahraga') echo "selected"; ?> >Kabid Olahraga</option>
+                    <option value="Kabid Pariwisata" <?php if($name_act == 'Kabid Pariwisata') echo "selected"; ?> >Kabid Pariwisata</option>
+                    <option value="Kabid Ekonomi Kreatif" <?php if($name_act == 'Kabid Ekonomi Kreatif') echo "selected"; ?> >Kabid Ekonomi Kreatif</option>
                 </select>
             </div>
         </div>
@@ -82,7 +81,6 @@
 
 <script>
 $(document).ready(function(){
-    console.log("Sukses")
     $('.form_actEdit').submit(function(e){
         e.preventDefault();
         $.ajax({ 
@@ -93,11 +91,11 @@ $(document).ready(function(){
         beforeSend:function() {
             $('.btnUpdate').attr('disable', 'disabled');
             $('.btnUpdate').html('<i class="fa fa-spin fa-spinner"></i>');
-    },
+        },
         complete: function() {
         $('.btnUpdate').removeAttr('disable');
         $('.btnUpdate').html('Update');
-    },
+        },
         success: function(response) {
             Swal.fire({
                 icon: 'success',
@@ -116,6 +114,6 @@ $(document).ready(function(){
     });
     return false;
 });
-}
+})
 
 </script>

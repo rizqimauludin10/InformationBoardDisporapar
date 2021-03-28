@@ -28,7 +28,6 @@
             
             
             <div class="col-sm-5">
-                <!-- <h5> Agenda Kegiatan </h5> -->
                 <table id="table_fixed">
                     <thead>
                         <tr>
@@ -37,57 +36,30 @@
                     </thead>
                 </table>
 
-                <div id="contain">
-                    <table id="table_scroll" class="table">
-                        <tbody>
-                            <?php foreach($data_act as $act) : ?>
-                            <tr >
-                                <td id="tgl"><?= date('d F', strtotime($act['date_act'])); ?></td>
-
-                                <td id="isitabel"><?= $act['title_act'] ?>
-                                <hr>
-                                <?= $act['desc_act'] ?>
-                                <hr>
-                                <?= $act['name_act'] ?>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <table id="table_fixed" class="mt-3">
-                    <thead>
-                        <tr>
-                            <th scope="col"> <h6 style="text-align: center">Jadwal Piket Hari Ini</h6></th>
-                        </tr>
-                    </thead>
-                </table>
-
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <table class="table table-warning">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Pagi</th>
-                                    <td colspan="2">Muhammad Dahlan</td>
-                                    <td colspan="2">Maulidia</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                        <div class="carousel-item ">
-                        <table class="table table-warning">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Siang</th>
-                                    <td colspan="2">Ismail</td>
-                                    <td colspan="2">Rizqi Mauludin</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
+                    <?php $i=0;?>
+                        <?php foreach($data_act as $act) : ?>
+                            <!-- <?php if ($i==0) {$set_ = 'active'; } else {$set_ = '';} ?>  -->
+                            <div class="carousel-item <?php if($i==0){echo 'active';}else{echo'';} ?>">
+                                <div id="contain">
+                                    <table class="table table-warning" id="table_scroll">
+                                        <tbody>
+                                            <tr>
+                                                <td id="tgl"><?= date('d F', strtotime($act['date_act'])); ?></td>
+                                                <td id="isitabel"><?= $act['title_act'] ?>
+                                                <hr>
+                                                <?= $act['desc_act'] ?>
+                                                <hr>
+                                                <?= $act['name_act'] ?>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <?php $i++; ?>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>
@@ -102,8 +74,8 @@
         </div>
 
         <div class="element-to-stick-to-bottom">
-            <div class="px-1">
-                <marquee class="py-3" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="5" behavior="scroll" style="color:white; font-size: 18px;">
+            <div>
+                <marquee class="py-2" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="5" behavior="scroll" style="color:white; font-size: 16px;">
                 <b>Selamat Datang di Dinas Kepemudaan Olahraga dan Pariwisata Kabupaten Kubu Raya | </b>
                 <b>Please Follow =>  </b> <b>Instagram : @disporaparkuburaya | </b> <b>Facebook : Disporapar Kabupaten Kubu Raya | </b>  <b>Twitter : @disporaparkkr | </b> <b>Youtube : Disporapar Kabupaten Kubu Raya </b>                
                 </marquee>
@@ -226,46 +198,43 @@
         document.getElementById('date').innerHTML = '<b style="color:white"> ' + daylist[day] + '</b>'  + "," + " " + todayDate ;
     }
 
-    $(document).ready(function() {
-        pageScroll();
-        $("#contain").mouseover(function() {
-            clearTimeout(my_time);
-        }).mouseout(function() {
-            pageScroll();
-        });
+    // $(document).ready(function() {
+    //     pageScroll();
+    //     $("#contain").mouseover(function() {
+    //         clearTimeout(my_time);
+    //     }).mouseout(function() {
+    //         pageScroll();
+    //     });
         
-        getWidthHeader('table_scroll');
+    //     getWidthHeader('table_scroll');    
+    // });
 
+    // var my_time;
+    // function pageScroll() {
+    //     var objDiv = document.getElementById("contain");
+    //     objDiv.scrollTop = objDiv.scrollTop + 1;
+
+    //     if ((objDiv.scrollTop + 150) == objDiv.scrollHeight) {
+    //         objDiv.scrollTop = 0;
+    //     }
+    //     my_time = setTimeout('pageScroll()', 60);
+    //     }
+
+    // function getWidthHeader(id_header, id_scroll) {
+    //     var colCount = 0;
+    //     $('#' + id_scroll + ' tr:nth-child(1) td').each(function () {
+    //         if ($(this).attr('colspan')) {
+    //         colCount += +$(this).attr('colspan');
+    //         } else {
+    //         colCount++;
+    //         }
+    //     });
         
-    
-    });
-
-    var my_time;
-    function pageScroll() {
-        var objDiv = document.getElementById("contain");
-        objDiv.scrollTop = objDiv.scrollTop + 1;
-
-        if ((objDiv.scrollTop + 150) == objDiv.scrollHeight) {
-            objDiv.scrollTop = 0;
-        }
-        my_time = setTimeout('pageScroll()', 60);
-        }
-
-    function getWidthHeader(id_header, id_scroll) {
-        var colCount = 0;
-        $('#' + id_scroll + ' tr:nth-child(1) td').each(function () {
-            if ($(this).attr('colspan')) {
-            colCount += +$(this).attr('colspan');
-            } else {
-            colCount++;
-            }
-        });
-        
-        for(var i = 1; i <= colCount; i++) {
-            var th_width = $('#' + id_scroll + ' > tbody > tr:first-child > td:nth-child(' + i + ')').width();
-            $('#' + id_header + ' > thead th:nth-child(' + i + ')').css('width',th_width + 'px');
-        }
-        }
+    //     for(var i = 1; i <= colCount; i++) {
+    //         var th_width = $('#' + id_scroll + ' > tbody > tr:first-child > td:nth-child(' + i + ')').width();
+    //         $('#' + id_header + ' > thead th:nth-child(' + i + ')').css('width',th_width + 'px');
+    //     }
+    //     }
 
 
         function startImageTransition() { 

@@ -15,6 +15,7 @@ class B_Activity extends BaseController
 	}
 
 	public function getData() {
+		helper('text');
 		if($this->request->isAjax()){
 			$act = new M_Activity();
 				$data = [
@@ -170,11 +171,29 @@ class B_Activity extends BaseController
 					'sukses' => 'Data kegiatan berhasil diupdate'
 			];
 				
-			
 			echo json_encode($msg);
 
 		} else {
 			exit('Maaf gagal diupdate');
+		}
+	}
+
+	public function deleteData() {
+		if($this->request->isAjax()) {
+
+			$id = $this->request->getVar('id');
+
+			$act = new M_Activity;
+
+			$act->delete($id);
+
+			$msg = [
+				'sukses' => 'Data kegiatan berhasil dihapus'
+		];
+			
+		echo json_encode($msg);
+
+
 		}
 	}
 
