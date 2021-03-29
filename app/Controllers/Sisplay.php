@@ -7,6 +7,7 @@ class Sisplay extends BaseController
 {
 	public function index()
 	{
+		helper('text');
         echo view('admin/_partials/partial_header');
 		
 		$act = new M_Activity();

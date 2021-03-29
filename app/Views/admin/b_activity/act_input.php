@@ -58,6 +58,7 @@
               <select select class="form-control" name="idKategori" id="idKategori">
                 <option value=""> --Daftar Pejabat-- </option>
                 <option value="Kepala Dinas"> Kepala Dinas </option>
+                <option value="Sekretaris Dinas"> Sekretaris Dinas </option>
                 <option value="Kabid Kepemudaan">Kabid Kepemudaan</option>
                 <option value="Kabid Olahraga">Kabid Olahraga</option>
                 <option value="Kabid Pariwisata">Kabid Pariwisata</option>

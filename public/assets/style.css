@@ -42,14 +42,16 @@ html {
 
 #clock {
     text-align: center;
-    font-size: 26pt;
+    font-size: 20pt;
     font-weight: 600;
+    color: white;
 }
 
 #date {
     text-align: center;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 100;
+    color: white;
 }
 
 .c_date {

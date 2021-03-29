@@ -54,6 +54,7 @@
                 <select select class="form-control" name="idKategori" id="idKategori">
                     <option value="Kepala Dinas" <?php if($name_act == 'Kepala Dinas') echo "selected"; ?> > Kepala Dinas </option>
                     <option value="Kabid Kepemudaan" <?php if($name_act == 'Kabid Kepemudaan') echo "selected"; ?> >Kabid Kepemudaan</option>
+                    <option value="Kabid Kepemudaan" <?php if($name_act == 'Sekretaris Dinas') echo "selected"; ?> >Sekretaris Dinas</option>
                     <option value="Kabid Olahraga" <?php if($name_act == 'Kabid Olahraga') echo "selected"; ?> >Kabid Olahraga</option>
                     <option value="Kabid Pariwisata" <?php if($name_act == 'Kabid Pariwisata') echo "selected"; ?> >Kabid Pariwisata</option>
                     <option value="Kabid Ekonomi Kreatif" <?php if($name_act == 'Kabid Ekonomi Kreatif') echo "selected"; ?> >Kabid Ekonomi Kreatif</option>

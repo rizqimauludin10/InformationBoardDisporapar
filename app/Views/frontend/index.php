@@ -3,12 +3,12 @@
     <div class="container-fluid bg" id="bg">
         <div class="row align-items-center bg_header">
 
-            <div class="col-sm-3 mb-2 ml-3 mt-2 p-2 c_date">
-                <div class="col-md-12" id="clock" style="color:white;"></div> 
-                <div class="col-md-12" id="date" style="color:white;"></div> 
+            <div class="col-sm-3 ml-3 mt-2 p-2 c_date">
+                <div class="col-md-12" id="clock"></div> 
+                <div class="col-md-12" id="date"></div> 
             </div>
 
-            <div class="col-sm-3 mt-2 mb-2 ">
+            <div class="col-sm-3 mt-2 ">
             <img class="logo" src="https://i.imgur.com/TJk6ykj.png" alt="Logo Disporapar">
 
 
@@ -17,9 +17,9 @@
                 <img style="width:40%" id="f1" src="https://i.imgur.com/TJk6ykj.png" alt="Logo Disporapar" > -->
             </div>
 
-            <div class="col-sm-5 text-left mt-2 mb-1 title">
-                <h5 style="font-family: Copperplate, fantasy; color: white; -webkit-text-stroke: 1px black; font-size:24pt;">PAPAN INFORMASI </h5>
-                <h5 style="font-family: Copperplate, fantasy; color: black; font-size:18pt;">DISPORAPAR KABUPATEN KUBU RAYA </h5>
+            <div class="col-sm-5 text-left mt-2 title">
+                <h5 style="font-family: Copperplate, fantasy; color: white; -webkit-text-stroke: 1px black; font-size:22pt;">PAPAN INFORMASI </h5>
+                <h5 style="font-family: Copperplate, fantasy; color: black; font-size:16pt;">DISPORAPAR KABUPATEN KUBU RAYA </h5>
                 <!-- <h6 style="font-family: Copperplate, fantasy; color: black; -webkit-text-stroke: 0.3px white; font-size:14pt;">Jalan Angkasa Pura II Komplek Perkantoran Pemda Kubu Raya</h6> -->
             </div>
         </div>
@@ -36,18 +36,18 @@
                     </thead>
                 </table>
 
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="20000">
                     <div class="carousel-inner">
                     <?php $i=0;?>
                         <?php foreach($data_act as $act) : ?>
-                            <!-- <?php if ($i==0) {$set_ = 'active'; } else {$set_ = '';} ?>  -->
                             <div class="carousel-item <?php if($i==0){echo 'active';}else{echo'';} ?>">
                                 <div id="contain">
                                     <table class="table table-warning" id="table_scroll">
                                         <tbody>
                                             <tr>
                                                 <td id="tgl"><?= date('d F', strtotime($act['date_act'])); ?></td>
-                                                <td id="isitabel"><?= $act['title_act'] ?>
+                                                <td id="isitabel">
+                                                <?=  word_limiter ($act['title_act'], 5) ?>
                                                 <hr>
                                                 <?= $act['desc_act'] ?>
                                                 <hr>
@@ -62,14 +62,63 @@
                         <?php endforeach ?>
                     </div>
                 </div>
+
+                <!-- Jadwal Piket -->
+
+                <table id="table_fixed" class="mt-1">
+                    <thead>
+                        <tr>
+                            <th scope="col"> <h6 style="text-align: center">Jadwal Piket Hari Ini</h6></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <table class="table table-warning">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Pagi</th>
+                                        <td colspan="2">Muhammad Dahlan</td>
+                                        <td colspan="2">Maulidia</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="carousel-item">
+                        <table class="table table-warning">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Siang</th>
+                                    <td colspan="2">Ismail</td>
+                                    <td colspan="2">Rizqi Mauludin</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+
+            
 
 
             <div class="col-sm-7 float-end">
                 <div class="float-end">
-                    <iframe width="520" height="300" src="http://www.youtube.com/embed/videoseries?list=PLN4g3wAFypr8w9jSeE6GCddc3Cbf6Ocev" frameborder="0" allow="autoplay; allowfullscreen encrypted-media"></iframe>
+                    <iframe width="520" height="250" src="http://www.youtube.com/embed/videoseries?list=PLN4g3wAFypr8w9jSeE6GCddc3Cbf6Ocev" frameborder="0" allow="autoplay; allowfullscreen encrypted-media"></iframe>
                         
                 </div>
+
+                <div class="float-end">
+                    <iframe width="520" height="250" src="http://www.youtube.com/embed/videoseries?list=PLN4g3wAFypr8w9jSeE6GCddc3Cbf6Ocev" frameborder="0" allow="autoplay; allowfullscreen encrypted-media"></iframe>
+                        
+                </div>
+
+
             </div>
         </div>
 
@@ -79,6 +128,10 @@
                 <b>Selamat Datang di Dinas Kepemudaan Olahraga dan Pariwisata Kabupaten Kubu Raya | </b>
                 <b>Please Follow =>  </b> <b>Instagram : @disporaparkuburaya | </b> <b>Facebook : Disporapar Kabupaten Kubu Raya | </b>  <b>Twitter : @disporaparkkr | </b> <b>Youtube : Disporapar Kabupaten Kubu Raya </b>                
                 </marquee>
+
+
+                                
+                
             </div>
         </div>
 
