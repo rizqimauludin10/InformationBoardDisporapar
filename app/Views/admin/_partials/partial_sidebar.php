@@ -65,8 +65,8 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sub Poster </h6>
-            <a class="collapse-item" href="login.html">Hari Besar</a>
-            <a class="collapse-item" href="register.html">Struktur Organisasi</a>
+            <a class="collapse-item" href="<?= base_url('b_poster/'); ?>">Hari Besar</a>
+            <a class="collapse-item" href="<?= base_url('b_pelayanan/'); ?>">Poster Pelayanan</a>
         </div>
     </div>
 </li>

@@ -97,6 +97,53 @@ class B_Piket extends BaseController{
 		}
 	}
 
+	public function piket_edit() {
+		if ($this->request->isAjax()) {
+			$id = $this->request->getVar('id');
+
+			$piket = new M_Piket();
+			$row = $piket->find($id);
+
+			$data = [
+				'id' => $row['id'],
+				'name_piket' => $row['name_piket'],
+				'date_piket' => $row['date_piket'],
+				'shift_piket' => $row['shift_piket']
+			];
+
+			$msg = [
+				'sukses' => view('admin/b_piket/edit_piket', $data)
+			];
+
+			echo json_encode($msg);
+		}
+	}
+
+
+	public function editData() {
+		if($this->request->isAjax()) {
+			$updateData = [
+				'name_piket' => $this->request->getVar('name_piket'),
+				'date_piket' => $this->request->getVar('date_piket'),
+				'shift_piket' => $this->request->getVar('shift'),
+				];
+
+			$piket = new M_Piket();
+
+			$id = $this->request->getVar('id');
+			$piket->update($id, $updateData);
+
+			$msg = [
+					'sukses' => 'Data kegiatan berhasil diupdate'
+			];
+				
+			echo json_encode($msg);
+
+		} else {
+			exit('Maaf gagal diupdate');
+		}
+	}
+
 
 	public function deleteData() {
 		if($this->request->isAjax()) {

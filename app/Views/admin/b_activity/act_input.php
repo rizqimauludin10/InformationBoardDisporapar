@@ -16,7 +16,7 @@
         <div class="modal-body">
           <div class="form-group row">
             <label for="title_act" class="col-sm-3 col-form-label">Nama Kegiatan</label>
-            <div class="col-sm-9">
+            <div class="col-sm-7">
               <input type="text" class="form-control" id="title_act" name="title_act">
               <div class="invalid-feedback errorNamaKegiatan"> </div>
             </div>
@@ -24,7 +24,7 @@
 
           <div class="form-group row">
             <label for="desc_act" class="col-sm-3 col-form-label">Deskripsi</label>
-            <div class="col-sm-9">
+            <div class="col-sm-7">
               <textarea class="form-control" id="desc_act" name="desc_act"> </textarea>
               <div class="invalid-feedback errorDescKegiatan"> </div>
             </div>
@@ -32,7 +32,7 @@
 
           <div class="form-group row">
             <label for="date_act" class="col-sm-3 col-form-label">Tanggal</label>
-            <div class="col-sm-9">
+            <div class="col-sm-3">
               <input type="date" class="form-control" id="date_act" name="date_act">
               <div class="invalid-feedback errorDate"> </div>
 
@@ -41,12 +41,12 @@
 
           <div class="form-group row">
             <label for="startfrom_act" class="col-sm-3 col-form-label">Jam Mulai</label>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <input type="time" class="form-control" id="startfrom_act" name="startfrom_act">
               <div class="invalid-feedback errorTimeStart"> </div>
             </div>
             <label for="startuntil_act" class="col-sm-1 col-form-label"> Sampai </label>  
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <input type="time" class="form-control" id="startuntil_act" name="startuntil_act">
               <div class="invalid-feedback errorTimeUntil"> </div>
             </div>
@@ -54,7 +54,7 @@
 
           <div class="form-group row">
             <label for="idKategori" class="col-sm-3 col-form-label">Dihadiri Oleh</label>
-            <div class="col-sm-9">
+            <div class="col-sm-7">
               <select select class="form-control" name="idKategori" id="idKategori">
                 <option value=""> --Daftar Pejabat-- </option>
                 <option value="Kepala Dinas"> Kepala Dinas </option>

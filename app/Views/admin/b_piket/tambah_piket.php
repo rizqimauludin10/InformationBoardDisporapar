@@ -24,7 +24,7 @@
 
           <div class="form-group row">
             <label for="date_piket" class="col-sm-3 col-form-label">Tanggal</label>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <input type="date" class="form-control" id="date_piket" name="date_piket">
               <div class="invalid-feedback errorDatePiket"> </div>
 
@@ -36,8 +36,8 @@
             <div class="col-sm-4">
               <select select class="form-control" name="shift" id="shift">
                 <option value=""> --Pilih Shift-- </option>
-                <option value="1"> Shift 1 </option>
-                <option value="2"> Shift 2 </option>
+                <option value="1"> Pagi </option>
+                <option value="2"> Siang </option>
               </select>
             </div>
           </div>

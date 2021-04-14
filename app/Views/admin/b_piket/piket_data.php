@@ -23,7 +23,12 @@
                         <?= $piket['date_piket'] ?>
                     </td>
                     <td>
-                        <?= $piket['shift_piket'] ?>
+
+                    <?php if($piket['shift_piket'] == 1) {
+                        echo ('<span class="badge bg-success">Pagi</span>');
+                    } else {
+                        echo ('<span class="badge bg-danger">Siang</span>');
+                    } ?>
                     </td>
 
                 <td>
@@ -44,6 +49,26 @@
             "ordering" : true,
         });
     });
+
+    function edit(id){
+        $.ajax({
+            type: "post",
+            url: "<?= site_url('b_piket/piket_edit') ?>",
+            data: {
+                id : id
+            },
+            dataType: "json",
+            success: function(response) {
+                if(response.sukses) {
+                    $('.viewmodalpiket').html(response.sukses).show();
+                    $('#edit_piket').modal('show');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+            }
+        });
+    }
 
 
     function hapus(id) {
