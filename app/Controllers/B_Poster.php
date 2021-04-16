@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\M_Poster;
 
-class B_Poster extends BaseController{
+class B_poster extends BaseController{
 
     public function index()
 	{

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\M_Pelayanan;
 
-class B_Pelayanan extends BaseController{
+class B_pelayanan extends BaseController{
 
     public function index()
 	{

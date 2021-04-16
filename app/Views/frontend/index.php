@@ -93,7 +93,7 @@
 
             <div class="col-sm-7 float-end">
                 <div class="float-end">
-                    <iframe width="520" height="230" src="https://www.youtube.com/embed?listType=playlist&list=PLN4g3wAFypr8w9jSeE6GCddc3Cbf6Ocev" frameborder="0" allow="autoplay encrypted-media"></iframe>
+                    <iframe width="520" height="240" src="https://www.youtube.com/embed?listType=playlist&list=PLN4g3wAFypr8w9jSeE6GCddc3Cbf6Ocev" frameborder="0" allow="autoplay encrypted-media"></iframe>
                 </div>
 
                 <!-- Pelayanan Info -->

@@ -14,7 +14,6 @@ class Sisplay extends BaseController
         echo view('admin/_partials/partial_header');
 		$todayDate = date('Y-m-d');
 		
-		
 		$act = new M_Activity();
 		$piket = new M_Piket();
 		$plyn = new M_Pelayanan();
@@ -23,9 +22,7 @@ class Sisplay extends BaseController
 			'data_piket' => $piket->where('date_piket = ' , $todayDate)->findAll(),
 			'data_plyn' => $plyn->where('plyn_status = ', '1')->findAll()
 		];
-
-		// dd ($data);
-        
+		
 		echo view('frontend/index', $data);
 	}
 }

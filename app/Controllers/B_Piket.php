@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\M_Piket;
 
-class B_Piket extends BaseController{
+class B_piket extends BaseController{
 
     public function index()
 	{

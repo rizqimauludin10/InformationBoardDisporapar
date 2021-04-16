@@ -36,8 +36,9 @@
 <script>
 
 function dataActivity() {
+  console.log("Activity Get Data")
   $.ajax({
-    url : "<?= site_url('b_activity/getData') ?>",
+    url : "<?= site_url('b_activity/getdata') ?>",
     dataType : "json",
     success: function(response) {
       $('.viewdata').html(response.data);

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Models\M_Activity;
-class B_Activity extends BaseController
+
+class B_activity extends BaseController
 {
 	public function index()
 	{
@@ -14,21 +14,21 @@ class B_Activity extends BaseController
 		echo view('admin/_partials/partial_footer');
 	}
 
-	public function getData() {
+	public function getdata() {
 		helper('text');
 		if($this->request->isAjax()){
 			$act = new M_Activity();
-				$data = [
-					'data_act' => $act->findAll()
-				];
+			$data = [
+				'data_act' => $act->findAll()
+			];
 
-				$msg = [
-					'data' => view('admin/b_activity/act_data', $data)
-				];
+			$msg = [
+				'data' => view('admin/b_activity/act_data', $data)
+			];
 
-				echo json_encode($msg);
+			echo json_encode($msg);
 		} else {
-			exit('Maaf Gagal');
+					exit('Maaf');
 		}
 
 		
