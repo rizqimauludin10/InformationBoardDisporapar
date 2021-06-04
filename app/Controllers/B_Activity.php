@@ -28,7 +28,7 @@ class B_activity extends BaseController
 
 			echo json_encode($msg);
 		} else {
-					exit('Maaf');
+			exit('Maaf');
 		}
 
 		
